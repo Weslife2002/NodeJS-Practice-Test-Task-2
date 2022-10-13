@@ -4,7 +4,9 @@ import homeController from "../controllers/homeController"
 let router = express.Router();
 
 let initWebRoutes = (app) =>{
-    router.get("/", homeController.createNewTable)
+    router.get("/", (req, res)=>{
+        return res.send("Welcome on board!");
+    })
 
     
     router.post("/api/users", homeController.createNewUser)
